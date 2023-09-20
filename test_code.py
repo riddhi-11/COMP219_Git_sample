@@ -3,11 +3,8 @@ import csv
 # Specify the path to the CSV file
 csv_file_path = "job_data.csv"
 
-# Ask the user for job titles separated by commas
-job_titles_input = input("Enter job titles separated by commas: ")
-
-# Split the user input into a list of job titles
-job_titles = [title.strip() for title in job_titles_input.split(',')]
+# Define the job titles for which we want to compute the average
+job_titles = ["Data Architect", "Senior Business Analyst", "Data Scientist", "Machine Learning Engineer"]
 
 try:
     # Open the CSV file for reading
@@ -29,7 +26,7 @@ try:
                 total_salaries += num_of_salaries
                 num_jobs += 1
 
-        # Calculate the average
+        # Calculate the average                                                           
         if num_jobs > 0:
             average_salary = total_salaries / num_jobs
         else:
@@ -43,3 +40,4 @@ except FileNotFoundError:
     print(f"CSV file not found: {csv_file_path}")
 except Exception as e:
     print(f"An error occurred: {e}")
+
